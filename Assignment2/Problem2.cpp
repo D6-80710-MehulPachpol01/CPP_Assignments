@@ -5,6 +5,7 @@ using namespace std;
 class Toolbooth
 {
 private:
+
     /* data */
 
     int cars;
