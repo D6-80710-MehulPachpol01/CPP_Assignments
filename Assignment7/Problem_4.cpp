@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 template <typename T>
 class Array {
 private:
@@ -18,7 +20,7 @@ public:
 
     void addElement(int index, const T& element) {
         if (index < 0 || index >= size) {
-            std::cout << "Index out of range" << std::endl;
+            cout << "Index out of range" << endl;
             return;
         }
         elements[index] = element;
@@ -26,15 +28,15 @@ public:
 
     void displayElement(int index) const {
         if (index < 0 || index >= size) {
-            std::cout << "Index out of range" << std::endl;
+            cout << "Index out of range" << endl;
             return;
         }
-        std::cout << "Element at index " << index << ": " << elements[index] << std::endl;
+        cout << "Element at index " << index << ": " << elements[index] << endl;
     }
 
     void deleteElement(int index) {
         if (index < 0 || index >= size) {
-            std::cout << "Index out of range" << std::endl;
+            cout << "Index out of range" << endl;
             return;
         }
         elements[index] = T(); 
@@ -87,7 +89,7 @@ int main() {
     intArray.resize(3);
 
     
-    std::cout << "Array size after resizing: " << intArray.getSize() << std::endl;
+    cout << "Array size after resizing: " << intArray.getSize() << endl;
 
     return 0;
 }
