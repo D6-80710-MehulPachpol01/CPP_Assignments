@@ -15,6 +15,39 @@ this->size = 5;
 arr = new int[this->size];
 }
 
+//Copy Constructor
+
+    Stack(const Stack& other) {
+        size = other.size;
+        top = other.top;
+        arr = new int[size];
+        for (int i = 0; i <= top; i++) {
+            arr[i] = other.arr[i];
+        }
+    }
+
+//operator overloading 
+ 
+    Stack& operator=(const Stack& other) {
+        if (this == &other) {
+            return *this; 
+        }
+        delete[] arr;
+
+        size = other.size;
+        top = other.top;
+        arr = new int[size];
+        for (int i = 0; i <= top; i++) {
+            arr[i] = other.arr[i];
+        }
+
+        return *this; 
+    }
+
+    ~Stack() {
+        delete[] arr;
+    }
+
 
 Stack(int size){
 this->size =size;
@@ -171,4 +204,7 @@ s1.print();
 
 return 0;
 }
+
+
+
 
